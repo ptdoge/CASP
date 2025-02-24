@@ -1,0 +1,4 @@
+# ninja log v5
+1	10211	1723807148317443500	/data/ptdoge/code/CDrepo/BCD/ptcdrepo/models/ops_dcnv3/build/temp.linux-x86_64-cpython-38/data/ptdoge/code/CDrepo/BCD/ptcdrepo/models/ops_dcnv3/src/cpu/dcnv3_cpu.o	d8956be67d2c8912
+2	28344	1723807166427464000	/data/ptdoge/code/CDrepo/BCD/ptcdrepo/models/ops_dcnv3/build/temp.linux-x86_64-cpython-38/data/ptdoge/code/CDrepo/BCD/ptcdrepo/models/ops_dcnv3/src/vision.o	b18360b19bd55124
+2	55065	1723807193130230200	/data/ptdoge/code/CDrepo/BCD/ptcdrepo/models/ops_dcnv3/build/temp.linux-x86_64-cpython-38/data/ptdoge/code/CDrepo/BCD/ptcdrepo/models/ops_dcnv3/src/cuda/dcnv3_cuda.o	e958f9cea4411b64
