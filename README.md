@@ -1,3 +1,3 @@
 # CASP
 
-The code will be available as soon as possible.
+Welcome to contact the author "dlaizmw@gmail.com" for collaborative research or project development.
