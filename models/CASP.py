@@ -199,7 +199,7 @@ class CASP(nn.Module):
         # backbone mit-b0
         x1, x2, x3, x4 = self.mit(x)
         
-        # 自顶向下
+        #
         if self.be == True:
             x3 = self.bem[2](x3, x4)
             x2 = self.bem[1](x2, x3)
@@ -228,7 +228,7 @@ class CASP(nn.Module):
         diff = []
         for i in range(4):
             f1, f2 = torch.chunk(dr[i], 2, dim=0)
-            diff.append(torch.abs(f1 - f2)) # 差异特征提取的形式
+            diff.append(torch.abs(f1 - f2)) # 
         
         pred = self.seg_head(diff)
 
@@ -241,19 +241,19 @@ class CASP(nn.Module):
 
         return out
     
-    # 解码器
+    #
     def seg_head(self, diff):
         
         x1, x2, x3, x4 = diff
 
-        x2 = F.interpolate(x2, x1.shape[-2:], mode = "bilinear", align_corners = False) # 先上采样      
-        x3 = F.interpolate(x3, x1.shape[-2:], mode = "bilinear", align_corners = False) # 先上采样      
-        x4 = F.interpolate(x4, x1.shape[-2:], mode = "bilinear", align_corners = False) # 先上采样
+        x2 = F.interpolate(x2, x1.shape[-2:], mode = "bilinear", align_corners = False) #    
+        x3 = F.interpolate(x3, x1.shape[-2:], mode = "bilinear", align_corners = False) #   
+        x4 = F.interpolate(x4, x1.shape[-2:], mode = "bilinear", align_corners = False) #
 
         x1 = self.to_fused[0](x1)  
         x2 = self.to_fused[1](x2)
         x3 = self.to_fused[2](x3)
-        x4 = self.to_fused[3](x4) # 此处引入全局解码器
+        x4 = self.to_fused[3](x4) # 
         
         x = self.to_seg(torch.cat([x1, x2, x3, x4], dim=1))
 
